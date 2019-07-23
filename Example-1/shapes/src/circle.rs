@@ -4,6 +4,7 @@ use crate::shape::Shape;
 use std::fmt;
 
 /// Define a Circle (i.e., an ellipse with the same major and minor axis)
+#[derive(Clone)]
 pub struct Circle {
     pub radius: f64,
 }
@@ -41,7 +42,7 @@ impl fmt::Display for Circle {
 }
 
 impl Circle {
-    /// Create a Circle with a default radius of 1.
+    /// Create a Circle with a fnault radius of 1.
     pub fn new() -> Self {
         Circle { radius: 1.0 }
     }
@@ -61,7 +62,10 @@ impl Circle {
 mod tests {
     use super::*;
     use std::f64;
+    use std::ptr;
     use hamcrest2::prelude::*;
+
+    const TAU: f64 = 2.0 * f64::consts::PI;
 
 
     #[test]
@@ -94,7 +98,7 @@ mod tests {
     fn test_area() {
         let generic = Circle::new();
         let fancy = Circle::with_radius(2 as f64);
-        
+
         assert_that!(generic.area(),
                      close_to(f64::consts::PI * generic.radius.powi(2), 0.05));
 
@@ -102,46 +106,54 @@ mod tests {
                      close_to(f64::consts::PI * fancy.radius.powi(2), 0.05));
     }
 
-    // def test_perimeter(self):
-        // generic = Circle()
-        // fancy = Circle(radius=2)
-        // assert_that!(generic.perimeter(),
-                    // close_to(Circle.TAU * generic.radius, 0.05))
+    fn test_perimeter() {
+        let generic = Circle::new();
+        let fancy = Circle::with_radius(2.0);
+        assert_that!(generic.perimeter(),
+                    close_to(TAU * generic.radius, 0.05));
 
-        // assert_that!(fancy.perimeter(),
-                    // close_to(Circle.TAU * fancy.radius, 0.05))
+        assert_that!(fancy.perimeter(),
+                    close_to(TAU * fancy.radius, 0.05));
+    }
 
-    // def test_deep_copy(self):
-    // self.generic = Circle()
-    // self.fancy = Circle(radius=2)
-        // a_copy = copy.deepcopy(self.fancy)
+    #[test]
+    fn test_deep_copy() {
+        let generic = Circle::new();
+        let fancy = Circle::with_radius(2.0);
+        let a_copy = fancy.clone();
 
-        // assert_that!(a_copy, is_not(same_instance(self.fancy)))
+        assert_that!(ptr::eq(&a_copy, &fancy), is(false));
 
-        // # I really should have defined __eq__
-        // assert_that!(a_copy.radius, close_to(self.fancy.radius, 0.001))
+        // I really should have defined __eq__
+        assert_that!(a_copy.radius, close_to(fancy.radius, 0.001));
+    }
 
-    // def test_str(self):
-    // self.generic = Circle()
-    // self.fancy = Circle(radius=2)
-        // fancy_str = str(self.fancy)
+    #[test]
+    fn test_str() {
+        let generic = Circle::new();
+        let fancy = Circle::with_radius(2.0);
+        let fancy_str = fancy.to_string();
 
-        // assert_that!(fancy_str, starts_with("Name"))
-        // assert_that!(fancy_str, contains_string("Circle"))
-        // assert_that!(fancy_str, ends_with("\n"))
+        assert!(fancy_str.starts_with("Name"));
+        assert!(fancy_str.contains("Circle"));
+        assert!(fancy_str.ends_with("\n"));
 
-        // assert_that!(fancy_str,
-                    // contains_string(Shape.FPT_FMT.format("Perimeter",
-                                                         // self.fancy.perimeter())))
-        // assert_that!(fancy_str,
-                    // contains_string(Shape.FPT_FMT.format("Area",
-                                                         // self.fancy.area())))
-        // assert_that!(fancy_str,
-                    // contains_string(Shape.FPT_FMT.format("Radius",
-                                                         // self.fancy.radius)))
-        // assert_that!(fancy_str,
-                    // contains_string(Shape.FPT_FMT.format("Diameter",
-                                                         // self.fancy.diameter)))
-        // assert_that!(fancy_str, ends_with("\n"))
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Perimeter",
+                                            fancy.perimeter())));
 
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Area",
+                                            fancy.area())));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Radius",
+                                            fancy.radius)));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Diameter",
+                                            fancy.diameter())));
+
+        assert!(fancy_str.ends_with("\n"));
+    }
 }

@@ -3,6 +3,7 @@ extern crate shapes;
 use shapes::shape::Shape;
 use shapes::circle::Circle;
 use shapes::equilateral_triangle::EquilateralTriangle;
+use shapes::right_triangle::RightTriangle;
 
 use std::fmt;
 
@@ -20,26 +21,26 @@ fn main() {
     println!("{}", "-".repeat(80));
 
     // Create one RightTriangle
-    //rht_tri = RightTriangle(1, 2)
+    let rht_tri = RightTriangle::with_base_height(1.0, 2.0);
 
-    //tri = rht_tri  # Point tri to rht_tri
-    // let shape = rht_tri  // Point shape to rht_tri
+    let tri = &rht_tri;  // Point tri to rht_tri
+    let shape = &rht_tri;  // Point shape to rht_tri
 
     // Is this a valid assignment?
     // let eql_tri = &rht_tri;
-    // Yes, because Python is loosely typed.
+    // Yes, because how Rust variable bindings work
 
     println!("{:^38}", "Display a Right Triangle (rht_tri)");
     println!("{}", "-".repeat(38));
-    // println!("{}", rht_tri);
+    println!("{}", rht_tri);
 
     println!("{:^38}", "Display a Right Triangle (tri)");
     println!("{}", "-".repeat(38));
-    // println!("{}", tri);
+    println!("{}", tri);
 
     println!("{:^38}", "Display a Right Triangle (shape)");
     println!("{}", "-".repeat(38));
-    // println!("{}", shape);
+    println!("{}", shape);
 
     println!("{}", "~".repeat(80));
 

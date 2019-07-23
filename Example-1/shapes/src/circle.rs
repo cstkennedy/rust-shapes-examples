@@ -10,7 +10,22 @@ pub struct Circle {
 }
 
 impl Circle {
-    fn diameter(&self) -> f64 {
+    /// Create a Circle with a fnault radius of 1.
+    pub fn new() -> Self {
+        Circle { radius: 1.0 }
+    }
+
+    /// Create a Circle
+    ///
+    /// # Args
+    ///
+    /// * `r` - desired radius
+    ///
+    pub fn with_radius(r: f64) -> Self {
+        Circle { radius: r }
+    }
+
+    pub fn diameter(&self) -> f64 {
         2f64 * self.radius
     }
 }
@@ -25,7 +40,7 @@ impl Shape for Circle {
         std::f64::consts::PI * self.radius * self.radius
     }
 
-    /// Compute the area using $2\pi r$
+    /// Compute the perimeter using $2\pi r$
     fn perimeter(&self) -> f64 {
         2.0 * std::f64::consts::PI * self.radius
     }
@@ -38,23 +53,6 @@ impl fmt::Display for Circle {
         writeln!(f, "{:12}:{:>24.4}", "Diameter", self.diameter());
         writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter());
         writeln!(f, "{:12}:{:>24.4}", "Area", self.area())
-    }
-}
-
-impl Circle {
-    /// Create a Circle with a fnault radius of 1.
-    pub fn new() -> Self {
-        Circle { radius: 1.0 }
-    }
-
-    /// Create a Circle
-    ///
-    /// # Args
-    ///
-    /// * `r` - desired radius
-    ///
-    pub fn with_radius(r: f64) -> Self {
-        Circle { radius: r }
     }
 }
 
@@ -71,7 +69,6 @@ mod tests {
     #[test]
     fn test_default_constructor() {
         let generic = Circle::new();
-        let fancy = Circle::with_radius(2.0);
 
         assert_that!(generic.name(), equal_to("Circle"));
         assert_that!(generic.radius, close_to(1.0, 0.01));
@@ -106,6 +103,7 @@ mod tests {
                      close_to(f64::consts::PI * fancy.radius.powi(2), 0.05));
     }
 
+    #[test]
     fn test_perimeter() {
         let generic = Circle::new();
         let fancy = Circle::with_radius(2.0);

@@ -1,1 +1,8 @@
-image: 'rust:latest'
+image: image: 'rust:latest'
+
+build:
+  stage: build
+
+  script: 
+    - rustc -v
+

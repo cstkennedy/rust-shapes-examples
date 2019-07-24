@@ -51,6 +51,7 @@ impl fmt::Display for RightTriangle {
         writeln!(f, "{:12}:{:>24.4}", "Base", self.base);
         writeln!(f, "{:12}:{:>24.4}", "Height", self.height);
         writeln!(f, "{:12}:{:>24.4}", "Hypotenuse", self.hypotenuse());
+        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter());
         writeln!(f, "{:12}:{:>24.4}", "Area", self.area())
     }
 }
@@ -106,5 +107,33 @@ mod tests {
 
         let expected = fancy.base + fancy.height + fancy.hypotenuse();
         assert_that!(fancy.perimeter(), close_to(expected, 1e-8));
+    }
+    
+    #[test]
+    fn test_str() {
+        let fancy = RightTriangle::with_base_height(3.0, 4.0);
+        let fancy_str = fancy.to_string();
+
+        assert!(fancy_str.starts_with("Name"));
+        assert!(fancy_str.contains("Triangle"));
+        assert!(fancy_str.ends_with("\n"));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Perimeter",
+                                            fancy.perimeter())));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Area",
+                                            fancy.area())));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Base",
+                                            fancy.base)));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Height",
+                                            fancy.height)));
+
+        assert!(fancy_str.ends_with("\n"));
     }
 }

@@ -21,7 +21,7 @@ impl EquilateralTriangle {
     ///
     /// $height = \frac{5}{4}side$
     fn height(&self) -> f64 {
-        (1.25 * (self.side.powi(2))).sqrt()
+        (3_f64.sqrt() / 2.0) * self.side
     }
 }
 
@@ -79,6 +79,18 @@ mod tests {
     }
 
     #[test]
+    fn test_height() {
+        let generic = EquilateralTriangle::new();
+        let fancy = EquilateralTriangle::with_side(3.0);
+
+        let expected: f64 = 3_f64.sqrt() / 2.0;
+        assert_that!(generic.height(), close_to(expected, 0.01));
+
+        let expected: f64 = 3_f64.sqrt() * 3.0 / 2.0;
+        assert_that!(fancy.height(), close_to(expected, 0.01));
+    }
+
+    #[test]
     fn test_area() {
         let generic = EquilateralTriangle::new();
         let fancy = EquilateralTriangle::with_side(3.0);
@@ -99,5 +111,30 @@ mod tests {
 
         assert_that!(generic.perimeter(), close_to(3.0, 1e-8));
         assert_that!(fancy.perimeter(), close_to(9.0, 1e-8));
+    }
+
+    #[test]
+    fn test_str() {
+        let generic = EquilateralTriangle::new();
+        let fancy = EquilateralTriangle::with_side(2.0);
+        let fancy_str = fancy.to_string();
+
+        assert!(fancy_str.starts_with("Name"));
+        assert!(fancy_str.contains("Equilateral Triangle"));
+        assert!(fancy_str.ends_with("\n"));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Perimeter",
+                                            fancy.perimeter())));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Area",
+                                            fancy.area())));
+
+        assert!(fancy_str.contains(&format!("{:12}:{:>24.4}",
+                                            "Side",
+                                            fancy.side)));
+
+        assert!(fancy_str.ends_with("\n"));
     }
 }

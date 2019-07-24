@@ -4,5 +4,6 @@ build:
   stage: build
 
   script: 
-    - rustc -v
+    - cd Example-1/shapes
+    - cargo test
 

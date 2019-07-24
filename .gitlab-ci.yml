@@ -4,5 +4,5 @@ build:
   stage: build
 
   script:
-    - cargo test --manifest-path=shapes/Cargo.toml
+    - cargo test --manifest-path=Example-1/shapes/Cargo.toml
 

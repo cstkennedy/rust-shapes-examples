@@ -1,4 +1,3 @@
-//pub use self::shape::Shape;
 use crate::shape::Shape;
 
 use std::fmt;
@@ -10,12 +9,12 @@ pub struct Circle {
 }
 
 impl Circle {
-    /// Create a Circle with a fnault radius of 1.
+    /// Create a Circle with a default radius of 1.
     pub fn new() -> Self {
         Circle { radius: 1.0 }
     }
 
-    /// Create a Circle
+    /// Create a Circle.
     ///
     /// # Args
     ///
@@ -25,6 +24,7 @@ impl Circle {
         Circle { radius: r }
     }
 
+    /// Compute diameter.
     pub fn diameter(&self) -> f64 {
         2f64 * self.radius
     }
@@ -108,10 +108,10 @@ mod tests {
         let generic = Circle::new();
         let fancy = Circle::with_radius(2.0);
         assert_that!(generic.perimeter(),
-                    close_to(TAU * generic.radius, 0.05));
+                     close_to(TAU * generic.radius, 0.05));
 
         assert_that!(fancy.perimeter(),
-                    close_to(TAU * fancy.radius, 0.05));
+                     close_to(TAU * fancy.radius, 0.05));
     }
 
     #[test]

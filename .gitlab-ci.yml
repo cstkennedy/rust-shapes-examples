@@ -3,7 +3,6 @@ image: 'rust:latest'
 build:
   stage: build
 
-  script: 
-    - cd Example-1/shapes
-    - cargo test
+  script:
+    - cargo test --manifest-path=shapes/Cargo.toml
 

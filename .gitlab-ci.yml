@@ -4,5 +4,7 @@ build:
   stage: build
 
   script:
-    - cargo test --manifest-path=Example-1/shapes/Cargo.toml
-
+    - cargo tarpaulin --manifest-path=Example-1/shapes/Cargo.toml
+    - cargo rustdoc --manifest-path=Example-1/shapes/Cargo.toml
+    - cargo tarpaulin --manifest-path=Example-2/shapes/Cargo.toml
+    - cargo rustdoc --manifest-path=Example-2/shapes/Cargo.toml

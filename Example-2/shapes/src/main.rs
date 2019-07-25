@@ -71,13 +71,17 @@ fn main() {
 
     // Create 5 "Random" Shapes
     let mut shapes: Vec<Box<Shape>> = Vec::new();
-    // shapes.push(shape_factory.create("Triangle"))?;
-    // shapes = [ShapeFactory.create("Triangle"),
-              // ShapeFactory.create("Right Triangle"),
-              // ShapeFactory.create("Equilateral Triangle"),
-              // ShapeFactory.create("Square"),
-              // ShapeFactory.create("Circle")];
-    //           ShapeFactory.create("1337 Haxor")];
+    shapes.push(shape_factory.create("Triangle").unwrap());
+    shapes.push(shape_factory.create("Right Triangle").unwrap());
+    shapes.push(shape_factory.create("Equilateral Triangle").unwrap());
+    shapes.push(shape_factory.create("Square").unwrap());
+    shapes.push(shape_factory.create("Circle").unwrap());
+    
+    let next_shape = shape_factory.create("1337 Haxor");
+    match next_shape {
+        Some(s) => shapes.push(s),
+        None => {},
+    }
 
     println!("{}", "*".repeat(38));
     println!("{:^38}", "Shapes That Exist");
@@ -92,7 +96,10 @@ fn main() {
     println!("{:^38}", "Display All Shapes");
     println!("{}", "*".repeat(38));
 
-    // for s in shapes.iter() {
-        // print!("{}", s);
-    // }
+    for s in shapes.iter() {
+        println!("Name     : {:>20}", s.name());
+        println!("Area     : {:>20.4}", s.area());
+        println!("Perimeter: {:>20.4}", s.perimeter());
+        println!();
+    }
 }

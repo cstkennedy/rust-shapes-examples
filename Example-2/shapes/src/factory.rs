@@ -36,6 +36,16 @@ impl Factory {
     ///
     /// Rust Refactoring required....
     /// <https://stackoverflow.com/questions/30353462/how-to-clone-a-struct-storing-a-boxed-trait-object/30353928#30353928>
+    pub fn create(&self, name: &str) -> Option<Box<Shape>>{
+        match name  {
+            "Triangle" => Some(Box::new(Triangle::new())),
+            "Right Triangle" => Some(Box::new(RightTriangle::new())),
+            "Equilateral Triangle" => Some(Box::new(EquilateralTriangle::new())),
+            "Square" => Some(Box::new(Square::new())),
+            "Circle" => Some(Box::new(Circle::new())),
+            _ =>  None
+        }
+    }
     // pub fn create(&self, name: &str) -> Option<Box<Shape>>{
         // match self.known_shapes.get(name) {
             // Some(&shape_box) => Some(Box::new((*shape_box).clone())),

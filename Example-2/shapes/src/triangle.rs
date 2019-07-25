@@ -46,11 +46,11 @@ impl Shape for Triangle {
 
 impl fmt::Display for Triangle {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        writeln!(f, "{:12}:{:>24}", "Name", self.name());
-        writeln!(f, "{:12}:{:>24.4}", "Side A", self.side_a);
-        writeln!(f, "{:12}:{:>24.4}", "Side B", self.side_b);
-        writeln!(f, "{:12}:{:>24.4}", "Side C", self.side_c);
-        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter());
+        writeln!(f, "{:12}:{:>24}", "Name", self.name())?;
+        writeln!(f, "{:12}:{:>24.4}", "Side A", self.side_a)?;
+        writeln!(f, "{:12}:{:>24.4}", "Side B", self.side_b)?;
+        writeln!(f, "{:12}:{:>24.4}", "Side C", self.side_c)?;
+        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter())?;
         writeln!(f, "{:12}:{:>24.4}", "Area", self.area())
     }
 }

@@ -7,7 +7,6 @@ use shapes::right_triangle::RightTriangle;
 use shapes::square::Square;
 use shapes::factory::Factory;
 
-use std::fmt;
 use std::vec::Vec;
 
 const PROGRAM_HEADING: [&'static str; 2] = ["Objects & Traits: 2-D Shapes",
@@ -66,10 +65,11 @@ fn main() {
     // List the available shapes
     print!("{}", shape_factory);
     println!("{}", "-".repeat(38));
-    print!("{:>2} shapes available.", shape_factory.number_known());
+    println!("{:>2} shapes available.", shape_factory.number_known());
     println!();
 
     // Create 5 "Random" Shapes
+    /*
     let mut shapes: Vec<Box<Shape>> = Vec::new();
     shapes.push(shape_factory.create("Triangle").unwrap());
     shapes.push(shape_factory.create("Right Triangle").unwrap());
@@ -82,13 +82,31 @@ fn main() {
         Some(s) => shapes.push(s),
         None => {},
     }
+    */
+
+    // Create 5 "Random" Shapes **with a loop**
+    let shape_names = ["Triangle",
+                       "Right Triangle",
+                       "Equilateral Triangle",
+                       "Square",
+                       "Circle",
+                       "1337 Haxor"];
+
+    let mut shapes: Vec<Box<Shape>> = Vec::new();
+
+    for n in shape_names.iter() {
+        let next_shape = shape_factory.create(n);
+        match next_shape {
+            Some(s) => shapes.push(s),
+            None => {},
+        }
+    }
 
     println!("{}", "*".repeat(38));
     println!("{:^38}", "Shapes That Exist");
     println!("{}", "*".repeat(38));
-    //print!("{:<24}: {:>4}", "Original Size", size);
-    //print!("{:<24}: {:>4}", "Invalid Shapes", (size - len(shapes))))
-    //print!("{:<24}: {:>4}", "New Size", len(shapes)))
+    println!("{:<24}: {:>4}", "Original Size", shapes.len());
+    println!("{:<24}: {:>4}", "Invalid Shapes", 0);
     println!();
 
     // Print all the shapes
@@ -103,3 +121,6 @@ fn main() {
         println!();
     }
 }
+
+
+

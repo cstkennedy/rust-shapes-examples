@@ -47,10 +47,10 @@ impl Shape for EquilateralTriangle {
 
 impl fmt::Display for EquilateralTriangle {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        writeln!(f, "{:12}:{:>24}", "Name", self.name());
-        writeln!(f, "{:12}:{:>24.4}", "Side", self.side);
-        writeln!(f, "{:12}:{:>24.4}", "Height", self.height());
-        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter());
+        writeln!(f, "{:12}:{:>24}", "Name", self.name())?;
+        writeln!(f, "{:12}:{:>24.4}", "Side", self.side)?;
+        writeln!(f, "{:12}:{:>24.4}", "Height", self.height())?;
+        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter())?;
         writeln!(f, "{:12}:{:>24.4}", "Area", self.area())
     }
 }

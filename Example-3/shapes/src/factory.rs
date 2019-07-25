@@ -1,8 +1,7 @@
 use std::collections::HashSet;
 use std::fmt;
-use std::error::Error;
 
-use crate::shape::Shape;
+//use crate::shape::Shape;
 use crate::square::Square;
 use crate::circle::Circle;
 use crate::triangle::Triangle;

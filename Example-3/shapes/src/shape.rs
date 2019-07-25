@@ -1,4 +1,3 @@
-use std::fmt;
 
 /// Define the interface for a 2D shape
 pub trait Shape {

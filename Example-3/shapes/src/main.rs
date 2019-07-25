@@ -1,12 +1,6 @@
 extern crate shapes;
 
-use shapes::shape::Shape;
-use shapes::circle::Circle;
-use shapes::equilateral_triangle::EquilateralTriangle;
-use shapes::right_triangle::RightTriangle;
-use shapes::square::Square;
 use shapes::factory::Factory;
-
 use std::vec::Vec;
 
 const PROGRAM_HEADING: [&'static str; 2] = ["Objects & Traits: 2-D Shapes",

@@ -48,10 +48,10 @@ impl Shape for Circle {
 
 impl fmt::Display for Circle {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        writeln!(f, "{:12}:{:>24}", "Name", self.name());
-        writeln!(f, "{:12}:{:>24.4}", "Radius", self.radius);
-        writeln!(f, "{:12}:{:>24.4}", "Diameter", self.diameter());
-        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter());
+        writeln!(f, "{:12}:{:>24}", "Name", self.name())?;
+        writeln!(f, "{:12}:{:>24.4}", "Radius", self.radius)?;
+        writeln!(f, "{:12}:{:>24.4}", "Diameter", self.diameter())?;
+        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter())?;
         writeln!(f, "{:12}:{:>24.4}", "Area", self.area())
     }
 }

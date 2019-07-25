@@ -47,11 +47,11 @@ impl Shape for RightTriangle {
 
 impl fmt::Display for RightTriangle {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        writeln!(f, "{:12}:{:>24}", "Name", self.name());
+        writeln!(f, "{:12}:{:>24}", "Name", self.name())?;
         writeln!(f, "{:12}:{:>24.4}", "Base", self.base);
         writeln!(f, "{:12}:{:>24.4}", "Height", self.height);
-        writeln!(f, "{:12}:{:>24.4}", "Hypotenuse", self.hypotenuse());
-        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter());
+        writeln!(f, "{:12}:{:>24.4}", "Hypotenuse", self.hypotenuse())?;
+        writeln!(f, "{:12}:{:>24.4}", "Perimeter", self.perimeter())?;
         writeln!(f, "{:12}:{:>24.4}", "Area", self.area())
     }
 }

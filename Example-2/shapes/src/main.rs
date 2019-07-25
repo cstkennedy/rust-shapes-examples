@@ -76,7 +76,7 @@ fn main() {
     shapes.push(shape_factory.create("Equilateral Triangle").unwrap());
     shapes.push(shape_factory.create("Square").unwrap());
     shapes.push(shape_factory.create("Circle").unwrap());
-    
+
     let next_shape = shape_factory.create("1337 Haxor");
     match next_shape {
         Some(s) => shapes.push(s),

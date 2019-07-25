@@ -1,10 +1,10 @@
-image: 'rust:latest'
+image: 'xd009642/tarpaulin:latest'
 
 build:
   stage: build
 
   script:
-    - cargo install cargo-tarpaulin
+    # - cargo install cargo-tarpaulin
     - cargo tarpaulin --manifest-path=Example-1/shapes/Cargo.toml
     - cargo rustdoc --manifest-path=Example-1/shapes/Cargo.toml
     - cargo tarpaulin --manifest-path=Example-2/shapes/Cargo.toml

@@ -8,6 +8,11 @@ use hamcrest2::prelude::*;
 use shapes::factory;
 use shapes::factory::Factory;
 use shapes::factory::KnownShape;
+use shapes::square::Square;
+use shapes::circle::Circle;
+use shapes::triangle::Triangle;
+use shapes::equilateral_triangle::EquilateralTriangle;
+use shapes::right_triangle::RightTriangle;
 
 use std::io::BufReader;
 use stringreader::StringReader;
@@ -73,8 +78,27 @@ fn test_read_shapes() {
 }
 
 #[test]
-fn test_known_shapes_diplay() {
+fn test_known_shapes_display() {
     // @TODO write tests for the KnownShape Display trait implementation
+    // assert!(false); // Fail
 
-    assert!(false); // Fail
+    let tri = shapes::triangle::Triangle::new();
+    let a_shape = KnownShape::Triangle(shapes::triangle::Triangle::new());
+    assert_that!(tri.to_string(), equal_to(a_shape.to_string()));
+
+    let tri = shapes::right_triangle::RightTriangle::new();
+    let a_shape = KnownShape::RightTriangle(RightTriangle::new());
+    assert_that!(tri.to_string(), equal_to(a_shape.to_string()));
+
+    let tri = shapes::equilateral_triangle::EquilateralTriangle::new();
+    let a_shape = KnownShape::EquilateralTriangle(EquilateralTriangle::new());
+    assert_that!(tri.to_string(), equal_to(a_shape.to_string()));
+
+    let square = shapes::square::Square::new();
+    let a_shape = KnownShape::Square(Square::new());
+    assert_that!(square.to_string(), equal_to(a_shape.to_string()));
+
+    let circle = shapes::circle::Circle::new();
+    let a_shape = KnownShape::Circle(Circle::new());
+    assert_that!(circle.to_string(), equal_to(a_shape.to_string()));
 }

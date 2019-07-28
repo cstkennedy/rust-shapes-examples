@@ -12,6 +12,7 @@ const PROGRAM_HEADING: [&str; 2] = ["Objects & Traits: 2-D Shapes",
                                     "Thomas J. Kennedy"];
 
 /// Utility function to print the program heading to Standard Out
+#[cfg_attr(tarpaulin, skip)]
 fn print_heading() {
 
     println!("{}", "-".repeat(80));
@@ -55,6 +56,7 @@ fn print_heading() {
 /// could be designed as a singleton class. Our ShapeFactory is simply a
 /// tracker--i.e., records are fixed and will be updated manually at compile
 /// time.
+#[cfg_attr(tarpaulin, skip)]
 fn main() {
 
     print_heading();

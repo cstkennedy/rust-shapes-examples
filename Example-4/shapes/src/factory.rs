@@ -20,12 +20,20 @@ pub enum KnownShape {
 
 impl fmt::Display for KnownShape {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        // match &*self {
+            // KnownShape::Triangle(s) => writeln!(f, "{}", s),
+            // KnownShape::RightTriangle(s) => writeln!(f, "{}", s),
+            // KnownShape::EquilateralTriangle(s) => writeln!(f, "{}", s),
+            // KnownShape::Square(s) => writeln!(f, "{}", s),
+            // KnownShape::Circle(s) => writeln!(f, "{}", s),
+        // }
+        // Change to "write! based on factory test"
         match &*self {
-            KnownShape::Triangle(s) => writeln!(f, "{}", s),
-            KnownShape::RightTriangle(s) => writeln!(f, "{}", s),
-            KnownShape::EquilateralTriangle(s) => writeln!(f, "{}", s),
-            KnownShape::Square(s) => writeln!(f, "{}", s),
-            KnownShape::Circle(s) => writeln!(f, "{}", s),
+            KnownShape::Triangle(s) => write!(f, "{}", s),
+            KnownShape::RightTriangle(s) => write!(f, "{}", s),
+            KnownShape::EquilateralTriangle(s) => write!(f, "{}", s),
+            KnownShape::Square(s) => write!(f, "{}", s),
+            KnownShape::Circle(s) => write!(f, "{}", s),
         }
     }
 }

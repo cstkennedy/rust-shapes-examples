@@ -161,7 +161,7 @@ pub fn read_shapes_with<B>(ins: B, shape_factory: Factory)-> Vec<KnownShape>
         let raw_line = line.unwrap();
 
         // Skip empty line
-        if raw_line.len() == 0 {
+        if raw_line.is_empty() {
             continue;
         }
 
@@ -177,7 +177,9 @@ pub fn read_shapes_with<B>(ins: B, shape_factory: Factory)-> Vec<KnownShape>
         let n = split_line[0].clone();
         let split_line = &split_line[1];
 
-        let dims: Vec<f64> = split_line.split(" ").filter(|s| s.len() > 0)
+        // Mistake -> s.len() > 0 != s.is_empty() -> I forgot the leading '!'
+        let dims: Vec<f64> = split_line.split(' ')
+            .filter(|s| !s.is_empty())
             .map(|dim| match dim.trim().parse() {
                 Ok(d) => d,
                 Err(_e) => 0.0,

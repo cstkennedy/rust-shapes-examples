@@ -17,3 +17,5 @@ build:
     - cargo rustdoc --manifest-path=Example-5/shapes/Cargo.toml
     - cargo tarpaulin --root Example-6/shapes/
     - cargo rustdoc --manifest-path=Example-6/shapes/Cargo.toml
+    - cargo tarpaulin --root Example-7/shapes/
+    - cargo rustdoc --manifest-path=Example-7/shapes/Cargo.toml

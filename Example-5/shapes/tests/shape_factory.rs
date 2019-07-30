@@ -124,7 +124,7 @@ fn test_read_shapes_with() {
     let factory = Factory::new();
 
     let some_shapes = factory::read_shapes_with(str_reader, factory);
-    println!("{:?}", some_shapes);
+    // println!("{:?}", some_shapes);
     assert_that!(some_shapes.len(), is(equal_to(5)));
 
     assert!(some_shapes[0].to_string().contains("Triangle"));

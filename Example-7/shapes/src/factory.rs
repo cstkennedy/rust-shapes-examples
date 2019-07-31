@@ -162,7 +162,6 @@ impl fmt::Display for Factory {
 ///  * `ins` - input source
 ///
 pub fn read_shapes<B: BufRead>(ins: B, shape_factory: Factory)-> Vec<KnownShape> {
-
     let mut shapes: Vec<KnownShape> = Vec::new();
 
     for line in ins.lines() {
@@ -203,15 +202,17 @@ pub fn read_shapes_with<B>(ins: B, shape_factory: Factory)-> Vec<KnownShape>
             continue;
         }
 
-        let n = split_line[0].clone();
-        let split_line = &split_line[1];
+        let n = &split_line[0];
+        let dims_str = &split_line[1];
 
         // Mistake -> s.len() > 0 != s.is_empty() -> I forgot the leading '!'
-        let dims: Vec<f64> = split_line.split(' ')
+        let dims: Vec<f64> = dims_str.split(' ')
             .filter(|s| !s.is_empty())
-            .map(|dim| match dim.trim().parse() {
-                Ok(d) => d,
-                Err(_e) => 0.0,
+            .map(|dim| {
+                match dim.trim().parse() {
+                    Ok(d) => d,
+                    Err(_e) => 0.0,
+                }
             }).collect();
 
         if let Some(s) = shape_factory.create_with(&n, &dims) {

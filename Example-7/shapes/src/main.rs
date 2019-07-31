@@ -105,6 +105,7 @@ fn main() {
     }
     println!();
 
+    // Find the "largest" and "smallest" shapes
     print_section_heading("Largest Shape by Area");
     let largest = &*shapes.iter()
                           .max_by_key(|s| OrderedFloat(s.area())).unwrap();
@@ -113,6 +114,6 @@ fn main() {
 
     print_section_heading("Smallest Shape by Perimeter");
     let smallest = &*shapes.iter()
-                          .max_by_key(|s| OrderedFloat(s.area())).unwrap();
+                           .max_by_key(|s| OrderedFloat(s.area())).unwrap();
     println!("{}", smallest);
 }

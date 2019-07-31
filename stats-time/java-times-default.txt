@@ -1,0 +1,10 @@
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  60.76s user 6.27s system 135% cpu 49.580 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  63.55s user 6.91s system 141% cpu 49.797 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  62.31s user 7.66s system 139% cpu 50.105 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  61.89s user 7.60s system 140% cpu 49.594 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  61.61s user 6.53s system 137% cpu 49.616 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  60.10s user 5.96s system 134% cpu 49.001 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  61.87s user 6.17s system 134% cpu 50.556 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  64.06s user 6.72s system 142% cpu 49.541 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  64.86s user 6.26s system 142% cpu 49.943 total
+java -jar  ~/Courses/Scratch/even-bigger-shapes-plain.txt > /dev/null  58.91s user 7.06s system 132% cpu 49.753 total

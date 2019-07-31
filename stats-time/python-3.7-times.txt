@@ -1,0 +1,10 @@
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    17.42s user 0.35s system 99% cpu 17.942 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    18.33s user 0.32s system 99% cpu 18.777 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    17.87s user 0.40s system 99% cpu 18.399 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    17.72s user 0.45s system 99% cpu 18.288 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    17.72s user 0.44s system 99% cpu 18.316 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    17.75s user 0.25s system 99% cpu 18.117 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    17.75s user 0.32s system 99% cpu 18.203 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    18.14s user 0.33s system 99% cpu 18.599 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    17.58s user 0.28s system 99% cpu 18.018 total
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py    17.65s user 0.29s system 99% cpu 18.067 total

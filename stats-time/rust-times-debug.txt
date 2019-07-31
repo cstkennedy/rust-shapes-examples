@@ -1,0 +1,10 @@
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.44s user 0.52s system 99% cpu 9.973 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.82s user 0.33s system 99% cpu 10.154 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.46s user 0.42s system 99% cpu 9.889 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.49s user 0.40s system 99% cpu 9.903 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.68s user 0.63s system 99% cpu 10.379 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.54s user 0.42s system 99% cpu 9.974 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.54s user 0.43s system 99% cpu 9.985 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.67s user 0.37s system 99% cpu 10.053 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.46s user 0.43s system 99% cpu 9.902 total
+target/debug/shapes ../../../even-bigger-shapes-plain.txt > /dev/null  9.53s user 0.36s system 99% cpu 9.897 total

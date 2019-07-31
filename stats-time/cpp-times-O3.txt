@@ -1,0 +1,10 @@
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.89s user 0.14s system 99% cpu 6.046 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.64s user 0.14s system 99% cpu 5.788 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.68s user 0.14s system 99% cpu 5.823 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.70s user 0.17s system 99% cpu 5.878 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.64s user 0.16s system 99% cpu 5.810 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.72s user 0.17s system 99% cpu 5.898 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.69s user 0.15s system 99% cpu 5.849 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.79s user 0.15s system 99% cpu 5.951 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.86s user 0.13s system 99% cpu 6.007 total
+~/Courses/Reviews/cs330/s19/Review-06-CPP-Shapes/Example-8/source/runShapes    5.66s user 0.15s system 99% cpu 5.816 total

@@ -1,0 +1,7 @@
+~/Courses/Reviews/cs330/s19/Review-12-Python3-Shapes/Example-7/runShapes.py     17.82s  user 0.32s system 99% cpu 18.297 total
+avg shared (code):         0 KB
+avg unshared (data/stack): 0 KB
+total (sum):               0 KB
+max memory:                215 MB
+page faults from disk:     0
+other page faults:         179543

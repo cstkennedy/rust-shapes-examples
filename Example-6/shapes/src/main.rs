@@ -115,6 +115,6 @@ fn main() {
 
     print_section_heading("Smallest Shape by Perimeter");
     let smallest = &*shapes.iter()
-                          .max_by_key(|s| OrderedFloat(s.area())).unwrap();
+                          .min_by_key(|s| OrderedFloat(s.perimeter())).unwrap();
     println!("{}", smallest);
 }

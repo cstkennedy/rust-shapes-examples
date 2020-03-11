@@ -1,6 +1,8 @@
 #[cfg(test)]
 #[macro_use]
 extern crate hamcrest2;
+#[macro_use]
+extern crate lazy_static;
 
 pub mod shape;
 pub mod circle;

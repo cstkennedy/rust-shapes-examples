@@ -4,7 +4,7 @@ extern crate ordered_float;
 use ordered_float::OrderedFloat;
 
 use shapes::shape::Shape;
-use shapes::factory::Factory;
+use shapes::factory;
 
 use std::io::BufReader;
 use std::fs::File;
@@ -80,19 +80,17 @@ fn main() {
         std::process::exit(1);
     }
 
-    let shape_factory = Factory::new();
-
     // Examine the ShapeFactory
     print_section_heading("Available Shapes");
-    print!("{}", shape_factory);
+    print!("{}", factory::list_known());
     println!("{}", "-".repeat(38));
-    println!("{:>2} shapes available.", shape_factory.number_known());
+    println!("{:>2} shapes available.", factory::number_known());
     println!();
 
     let f = File::open(&argv[1]).expect("Could not open file");
     let ins = BufReader::new(f);
 
-    let shapes = shapes::factory::read_shapes_with(ins, shape_factory);
+    let shapes = factory::read_shapes_with(ins);
 
     print_section_heading("Display All Shapes");
     for s in shapes.iter() {

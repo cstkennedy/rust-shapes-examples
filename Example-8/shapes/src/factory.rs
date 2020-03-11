@@ -107,19 +107,19 @@ impl Factory {
     pub fn create_with(&self, name: &str, dims: &[f64]) -> Option<KnownShape> {
         match name  {
             "Triangle" => {
-                Some(Triangle::with_sides(dims[0], dims[1], dims[2]).into())
+                Some(Triangle::from(dims).into())
             },
             "Right Triangle" => {
-                Some(RightTriangle::with_base_height(dims[0], dims[1]).into())
+                Some(RightTriangle::from(dims).into())
             },
             "Equilateral Triangle" => {
-                Some(EquilateralTriangle::with_side(dims[0]).into())
+                Some(EquilateralTriangle::from(dims).into())
             },
             "Square" => {
-                Some(Square::with_side(dims[0]).into())
+                Some(Square::from(dims).into())
             },
             "Circle" => {
-                Some(Circle::with_radius(dims[0]).into())
+                Some(Circle::from(dims).into())
             },
             _ =>  None
         }
@@ -253,3 +253,34 @@ impl From<Circle> for KnownShape {
         KnownShape::Circle(item)
     }
 }
+
+impl From<&[f64]> for Triangle {
+    fn from(dims: &[f64]) -> Self {
+        Triangle::with_sides(dims[0], dims[1], dims[2])
+    }
+}
+
+impl From<&[f64]> for RightTriangle  {
+    fn from(dims: &[f64]) -> Self {
+        RightTriangle::with_base_height(dims[0], dims[1])
+    }
+}
+
+impl From<&[f64]> for EquilateralTriangle {
+    fn from(dims: &[f64]) -> Self {
+        EquilateralTriangle::with_side(dims[0])
+    }
+}
+
+impl From<&[f64]> for Square {
+    fn from(dims: &[f64]) -> Self {
+        Square::with_side(dims[0])
+    }
+}
+
+impl From<&[f64]> for Circle {
+    fn from(dims: &[f64]) -> Self {
+        Circle::with_radius(dims[0])
+    }
+}
+

@@ -167,6 +167,13 @@ pub fn read_shapes<B: BufRead>(ins: B)-> Vec<KnownShape> {
     }
 
     shapes
+    // ins.lines()
+        // .into_iter()
+        // .filter_map(Result::ok)
+        // .map(|name| create(name.trim()))
+        // .filter(|s| s.is_some())
+        // .map(|s| s.unwrap())
+        // .collect()
 }
 
 /// Create shapes based on names *and dimension data* from an input buffer.

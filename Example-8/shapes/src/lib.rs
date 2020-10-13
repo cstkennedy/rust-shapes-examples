@@ -10,5 +10,6 @@ pub mod triangle;
 pub mod equilateral_triangle;
 pub mod right_triangle;
 pub mod square;
+pub mod known_shape;
 
 pub mod factory;

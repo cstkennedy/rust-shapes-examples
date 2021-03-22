@@ -6,7 +6,7 @@ extern crate shapes;
 use hamcrest2::prelude::*;
 
 use shapes::factory;
-use shapes::factory::KnownShape;
+use shapes::known_shape::KnownShape;
 use shapes::square::Square;
 use shapes::circle::Circle;
 use shapes::triangle::Triangle;

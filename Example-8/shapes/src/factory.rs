@@ -165,7 +165,7 @@ pub fn read_shapes_with<B>(ins: B)-> Vec<KnownShape>
                 }
             }).collect();
 
-        if let Some(s) = create_with(&n, &dims) {
+        if let Some(s) = create_with(n, &dims) {
             shapes.push(s);
         }
     }

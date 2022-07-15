@@ -2,12 +2,12 @@
 name = "shapes"
 version = "0.1.0"
 authors = ["Thomas J. Kennedy <tkennedy@cs.odu.edu>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-ordered-float = "1.0.2"
+ordered-float = "2.8.0"
 lazy_static = "1.4.0"
-itertools = "0.8"
+itertools = "0.10.3"
 
 [dev-dependencies]
 hamcrest2 = "*"
